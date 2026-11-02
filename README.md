@@ -6,6 +6,8 @@ A small mobile website that writes a fresh WhatsApp reminder for the madrichim o
 - **Tuesday**: the clock is ticking
 - **Wednesday**: LAST reminder, deadline VANDAAG
 
+> The `peoulot/` folder holds a second, separate site: the Monday "Peoulot in de drive" and Thursday "Peoulot verbeterd" message. See [peoulot/README.md](peoulot/README.md).
+
 Each message is built from interchangeable parts per day (openers, day lines, deadline lines, motivation lines, emoji combos, closers), and sometimes one of ten handwritten messages is used instead. The choice is seeded on the date (year + ISO week + weekday), so the page shows the same message all day and a different one next week. The opener and the motivation line never repeat within 4 weeks of the same day.
 
 ## Files
