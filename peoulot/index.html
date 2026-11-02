@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="nl-BE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Peoulot Update</title>
+  <meta name="description" content="Het WhatsApp-bericht voor maandag (Peoulot in de drive) en donderdag (Peoulot verbeterd).">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0b141a">
+
+  <!-- Home screen app -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Peoulot">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="icons/icon-192.png" type="image/png" sizes="192x192">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <p class="eyebrow" id="today-label">&nbsp;</p>
+      <h1>Peoulot Update</h1>
+    </header>
+
+    <nav class="tabs" id="tabs" role="tablist" aria-label="Kies een dag"></nav>
+
+    <section class="rest" id="rest" hidden>
+      <div class="rest-emoji" aria-hidden="true">😴</div>
+      <h2>Geen bericht vandaag</h2>
+      <p id="rest-text"></p>
+      <p class="muted">Toch een bericht nodig? Kies hierboven een dag.</p>
+    </section>
+
+    <section class="editor" id="editor" hidden>
+      <label class="editor-label" for="msg" id="msg-label"></label>
+      <div class="bubble">
+        <textarea id="msg" rows="8" spellcheck="false" autocorrect="off" autocapitalize="sentences"></textarea>
+      </div>
+      <a class="btn btn-send" id="send" href="#">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.4 20.4 21 12 3.4 3.6 3.4 10.2 15 12 3.4 13.8z"/></svg>
+        Stuur via WhatsApp
+      </a>
+      <div class="row">
+        <button class="btn btn-ghost" id="copy" type="button">Kopieer</button>
+        <button class="btn btn-ghost" id="reset" type="button" disabled>↺ Herstel</button>
+      </div>
+    </section>
+
+    <footer class="tips">
+      <details id="install-tip">
+        <summary>📲 Op je beginscherm zetten</summary>
+        <ol>
+          <li>Open deze pagina in <b>Safari</b>.</li>
+          <li>Tik op <b>Deel</b> <span aria-hidden="true">(□↑)</span>.</li>
+          <li>Kies <b>Zet op beginscherm</b> en tik op <b>Voeg toe</b>.</li>
+        </ol>
+        <p class="muted">Daarna opent Peoulot Update als een gewone app, zonder Safari-balken.</p>
+      </details>
+      <details>
+        <summary>⚡️ Snelkoppeling</summary>
+        <p>Maak in de Opdrachten-app een opdracht met de actie <b>Open URL's</b> en deze link. Op maandag en donderdag opent hij meteen WhatsApp met het bericht van die dag:</p>
+        <div class="go-url">
+          <code id="go-url"></code>
+          <button class="btn btn-small" id="copy-go" type="button">Kopieer link</button>
+        </div>
+      </details>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="messages.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
